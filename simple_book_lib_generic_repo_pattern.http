@@ -1,0 +1,6 @@
+@simple_book_lib_generic_repo_pattern_HostAddress = http://localhost:5211
+
+GET {{simple_book_lib_generic_repo_pattern_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
