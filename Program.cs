@@ -1,5 +1,10 @@
 
+using BLL;
+using BLL.Services;
 using DLA.Data;
+using DLA.Data.Interface;
+using DLA.Data.Repositories;
+using DLA.Data.Specific_interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace simple_book_lib_generic_repo_pattern
@@ -18,6 +23,10 @@ namespace simple_book_lib_generic_repo_pattern
             builder.Services.AddSwaggerGen();
             builder.Services.AddDbContext<AppDbContext>(option =>
             option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConStr")));
+            builder.Services.AddScoped(typeof(IGenericRepo<>),typeof(GenericRepo<>));
+            builder.Services.AddScoped(typeof(IBook), typeof(BookRepository));
+            builder.Services.AddScoped<BookService>();
+            builder.Services.AddAutoMapper(typeof(MyMappingProfile));
 
 
             var app = builder.Build();

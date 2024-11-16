@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("simple_book_lib_generic_repo_pattern")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ddfe4e7dd0c6726705b8e29ccd43b0fb4435c1a7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1aebdcd0f8ad2cd78b06903181024401c2028859")]
 [assembly: System.Reflection.AssemblyProductAttribute("simple_book_lib_generic_repo_pattern")]
 [assembly: System.Reflection.AssemblyTitleAttribute("simple_book_lib_generic_repo_pattern")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
