@@ -147,8 +147,6 @@ namespace simple_book_lib_generic_repo_pattern.Controllers
                 };
                 return StatusCode(500, response);
             }
-
-
         }
     }
 }
