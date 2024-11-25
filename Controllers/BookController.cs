@@ -148,5 +148,24 @@ namespace simple_book_lib_generic_repo_pattern.Controllers
                 return StatusCode(500, response);
             }
         }
+
+        [HttpPost]
+        public async Task<IActionResult> AddNew(AddNewBookDto addedBook)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                await _bookService.AddNew(addedBook);
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
     }
 }

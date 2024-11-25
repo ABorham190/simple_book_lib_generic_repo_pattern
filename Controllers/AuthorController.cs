@@ -109,7 +109,6 @@ namespace simple_book_lib_generic_repo_pattern.Controllers
         }
 
         [HttpPost]
-
         public async Task<IActionResult>AddNewAuthorToExistingPerson(int PersonID,string Title)
         {
             if (PersonID < 1)
@@ -132,6 +131,24 @@ namespace simple_book_lib_generic_repo_pattern.Controllers
                     message = ex.Message,
                 };
                 return StatusCode(500, response);
+            }
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> Update(int AuthorID,UpdateAuthorDto updatedAuthor)
+        {
+            if(AuthorID < 1 || updatedAuthor == null)
+            {
+                return BadRequest("Invalid User Input");
+            }
+            try
+            {
+                await _authorService.Update(AuthorID, updatedAuthor);
+
+                return Ok("UpdatedSuccessfully");
+            }catch(Exception ex)
+            {
+                return StatusCode(500, ex.Message);
             }
         }
 
