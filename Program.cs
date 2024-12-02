@@ -28,6 +28,8 @@ namespace simple_book_lib_generic_repo_pattern
             builder.Services.AddScoped<BookService>();
             builder.Services.AddScoped(typeof(IAuthor), typeof(AuthorRepository));
             builder.Services.AddScoped<AuthorService>();
+            builder.Services.AddScoped(typeof(IBorrower), typeof(BorrowerRepository));
+            builder.Services.AddScoped<BorrowerService>();
             builder.Services.AddAutoMapper(typeof(MyMappingProfile));
 
 
